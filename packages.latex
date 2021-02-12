@@ -1,0 +1,155 @@
+
+\usepackage{amsmath, amssymb}
+\usepackage[fleqn]{mathtools}
+
+
+\usepackage{microtype}
+\usepackage{blindtext}
+
+\usepackage{ifxetex}
+\ifxetex{}
+  \usepackage[MnSymbol]{mathspec}
+  \defaultfontfeatures{
+    Ligatures=TeX,
+    Mapping=tex-text,
+    Scale=MatchLowercase,
+  }
+  \setmainfont[]{Minion Pro}
+  \setmathfont(Digits,Latin,Greek)[
+    Numbers={Lining, Proportional}
+  ]{Minion Pro}
+  \setmathrm{Minion Pro}
+  \setallsansfonts{Myriad Pro}
+  \setallmonofonts[]{Fira Mono}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+\fi
+
+\usepackage[ngerman]{babel}
+
+%Seitenränder
+\usepackage{geometry}
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+\usepackage[dvipsnames]{xcolor}
+
+\usepackage[
+  ngerman,
+  textwidth=2cm,
+  textsize=tiny,
+  backgroundcolor=white,
+  linecolor=red,
+  bordercolor=red,
+  tickmarkheight=10pt
+]{todonotes}
+
+\usepackage{lastpage}
+
+\usepackage{listings}
+
+\usepackage[shortlabels]{enumitem}
+\setlist[itemize]{topsep=3pt,itemsep=0pt,parsep=3pt}
+\setlist[enumerate]{topsep=3pt,itemsep=0pt,parsep=3pt}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\usepackage[mode=text]{siunitx}
+\sisetup{locale=DE,output-decimal-marker={,},per-mode=fraction,exponent-product=\cdot}
+
+\usepackage{xurl}
+\usepackage{hyperref}
+
+\usepackage{chemmacros}
+\usepackage{chemformula}
+%\usepackage{mhchem}
+\renewcommand{\lqd}{\phase{l}}
+\renewcommand{\sld}{\phase{s}}
+
+\usepackage{tikz}
+%\usetikzlibrary{%
+%  %arrows,
+%  %backgrounds,
+%  %calc,
+%  %intersections,
+%  %mindmap,
+%  %positioning,
+%  %through,
+%  %trees,
+%  %shapes.geometric,
+%  %shapes.symbols,
+%  %shapes.misc,
+%  %shapes.multipart,
+%  %fit,
+%  %automata,
+%  %decorations.pathreplacing,
+%  %circuits.ee.IEC,
+%}
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.16}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\newcommand{\Nbb}{\mathbb{N}}
+\newcommand{\Zbb}{\mathbb{Z}}
+\newcommand{\Qbb}{\mathbb{Q}}
+\newcommand{\Rbb}{\mathbb{R}}
+\newcommand{\Cbb}{\mathbb{C}}
+\newcommand{\Pbb}{\mathbb{P}}
+
+\newcommand{\Ac}{\ensuremath\mathcal{A}}
+\newcommand{\Bc}{\ensuremath\mathcal{B}}
+\newcommand{\Cc}{\ensuremath\mathcal{C}}
+\newcommand{\Dc}{\ensuremath\mathcal{D}}
+\newcommand{\Ec}{\ensuremath\mathcal{E}}
+\newcommand{\Fc}{\ensuremath\mathcal{F}}
+\newcommand{\Gc}{\ensuremath\mathcal{G}}
+\newcommand{\Hc}{\ensuremath\mathcal{H}}
+\newcommand{\Ic}{\ensuremath\mathcal{I}}
+\newcommand{\Jc}{\ensuremath\mathcal{J}}
+\newcommand{\Kc}{\ensuremath\mathcal{K}}
+\newcommand{\Lc}{\ensuremath\mathcal{L}}
+\newcommand{\Mc}{\ensuremath\mathcal{M}}
+\newcommand{\Nc}{\ensuremath\mathcal{N}}
+\newcommand{\Oc}{\ensuremath\mathcal{O}}
+\newcommand{\Pc}{\ensuremath\mathcal{P}}
+\newcommand{\Qc}{\ensuremath\mathcal{Q}}
+\newcommand{\Rc}{\ensuremath\mathcal{R}}
+\newcommand{\Sc}{\ensuremath\mathcal{S}}
+\newcommand{\Tc}{\ensuremath\mathcal{T}}
+\newcommand{\Uc}{\ensuremath\mathcal{U}}
+\newcommand{\Vc}{\ensuremath\mathcal{V}}
+\newcommand{\Wc}{\ensuremath\mathcal{W}}
+\newcommand{\Xc}{\ensuremath\mathcal{X}}
+\newcommand{\Yc}{\ensuremath\mathcal{Y}}
+\newcommand{\Zc}{\ensuremath\mathcal{Z}}
+
+\newcommand{\hl}[2][BrickRed]{\textbf{\textcolor{#1}{#2}}}
+
+
+\mdfdefinestyle{defstyle}{%
+linecolor=BrickRed,%
+linewidth=2pt,%
+skipabove=5pt,%
+skipbelow=5pt,%
+roundcorner=5pt,%
+frametitlerule=true,%
+frametitlefont={\normalfont\bfseries\color{BrickRed}},%
+frametitlerulewidth=2pt,innertopmargin=\topskip}
+\mdfdefinestyle{bspstyle}{%
+linecolor=YellowGreen,%
+linewidth=2pt,%
+skipabove=5pt,%
+skipbelow=5pt,%
+roundcorner=5pt,%
+frametitlerule=true,%
+frametitlefont={\normalfont\bfseries\color{YellowGreen}},%
+frametitlerulewidth=2pt,innertopmargin=\topskip}
+\mdtheorem[style=bspstyle]{beispiel}{Beispiel}
+\mdtheorem[style=defstyle]{definition}{Definition}
