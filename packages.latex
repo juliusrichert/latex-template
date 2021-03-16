@@ -56,9 +56,12 @@
 \usepackage[shortlabels]{enumitem}
 \setlist[itemize]{topsep=3pt,itemsep=0pt,parsep=3pt}
 \setlist[enumerate]{topsep=3pt,itemsep=0pt,parsep=3pt}
+\setlist[description]{style=multiline,leftmargin=3cm}
+
 
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage[section]{placeins}
 
 \usepackage[mode=text]{siunitx}
 \sisetup{locale=DE,output-decimal-marker={,},per-mode=fraction,exponent-product=\cdot}
@@ -133,24 +136,40 @@
 
 \newcommand{\hl}[2][BrickRed]{\textbf{\textcolor{#1}{#2}}}
 
+\definecolor{DarkBrickRed}{HTML}{802313}
+\definecolor{DarkYellowGreen}{HTML}{5f8046}
+\definecolor{DarkCornflowerBlue}{HTML}{256380}
 
 \mdfdefinestyle{defstyle}{%
 linecolor=BrickRed,%
+backgroundcolor=BrickRed!30,%
 linewidth=2pt,%
 skipabove=5pt,%
 skipbelow=5pt,%
 roundcorner=5pt,%
 frametitlerule=true,%
-frametitlefont={\normalfont\bfseries\color{BrickRed}},%
+frametitlefont={\normalfont\bfseries\color{DarkBrickRed}},%
 frametitlerulewidth=2pt,innertopmargin=\topskip}
 \mdfdefinestyle{bspstyle}{%
 linecolor=YellowGreen,%
+backgroundcolor=YellowGreen!30,%
 linewidth=2pt,%
 skipabove=5pt,%
 skipbelow=5pt,%
 roundcorner=5pt,%
 frametitlerule=true,%
-frametitlefont={\normalfont\bfseries\color{YellowGreen}},%
+frametitlefont={\normalfont\bfseries\color{YellowGreen!60!black}},%
 frametitlerulewidth=2pt,innertopmargin=\topskip}
-\mdtheorem[style=bspstyle]{beispiel}{Beispiel}
-\mdtheorem[style=defstyle]{definition}{Definition}
+\mdfdefinestyle{hlstyle}{%
+linecolor=CornflowerBlue,%
+backgroundcolor=CornflowerBlue!30,%
+linewidth=2pt,%
+skipabove=5pt,%
+skipbelow=5pt,%
+roundcorner=5pt,%
+frametitlerule=true,%
+frametitlefont={\normalfont\bfseries\color{CornflowerBlue!60!black}},%
+frametitlerulewidth=2pt,innertopmargin=\topskip}
+\newmdenv[style=hlstyle]{highlight}
+\newmdenv[style=bspstyle]{beispiel}
+\newmdenv[style=defstyle]{definition}
